@@ -1,0 +1,28 @@
+{
+  "name": "nasa-mars-photo-app",
+  "version": "1.0.0",
+  "description": "An application that provides users with the ability to search for photos taken by NASA's Curiosity Mars rover.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdx-code/nasa-mars-photo-app.git"
+  },
+  "author": "jyotirmoy das",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdx-code/nasa-mars-photo-app/issues"
+  },
+  "homepage": "https://github.com/jdx-code/nasa-mars-photo-app#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
