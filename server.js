@@ -6,6 +6,8 @@ require('dotenv').config({ path: './config/.env' })
 
 app.set('view engine', 'ejs')
 
+app.use(express.static('public'));
+
 app.use('/', homeRoute)
 
 const PORT = process.env.PORT
