@@ -2,6 +2,8 @@ const express = require('express')
 const homeRoute = require('./routes/home')
 const app = express()
 
+const axios = require('axios')
+
 require('dotenv').config({ path: './config/.env' })
 
 app.set('view engine', 'ejs')

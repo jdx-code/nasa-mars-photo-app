@@ -3,6 +3,6 @@ const router = express.Router()
 const homeController = require('../controllers/home')
 
 router.get('/', homeController.getIndex)
-router.get('/getApi', homeController.getApiKey)
+router.get('/getMarsPhoto', homeController.getMarsPhoto)
 
 module.exports = router

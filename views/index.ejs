@@ -7,8 +7,27 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>MARS photos</h1>
-    <img/>
+    <h1>MARS photo API</h1>
+    <h2>Curiosity</h2>
+    <% let cams = ['fhaz', 'rhaz', 'mast', 'chemcam', 'mahli', 'mardi', 'navcam', 'pancam', 'minites'] %>
+    <form action="/getMarsPhoto" method="GET">
+        <label>Sol(Mars Solar Day)</label>
+        <input type="number" name="sol" value="">
+        <label>Camera</label>
+        <select name="cam">
+            <% cams.forEach(cam => { %>
+            <option value="<%= cam %>"><%= cam %></option>
+            <% }) %>
+        </select>
+        <button type="submit">Find Photos</button>
+    </form>
+    
+    <% if(typeof photos !== 'undefined') { %>
+        <% photos.forEach(photo => { %>
+            <img src="<%= photo.img_src %>" alt="Mars photo" style="width:300px; height: 250px;">
+        <% }) %>
+    <% } %>
+
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
