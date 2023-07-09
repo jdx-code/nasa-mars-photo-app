@@ -6,8 +6,18 @@ module.exports = {
     },
     getMarsPhoto: async (req, res) => {
         try{
-            const {sol, cam} = req.query
-            await axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&camera=${cam}&api_key=${process.env.NASA_API_KEY}`)
+            const {sol, camera} = req.query 
+            
+            let filterParams
+            if(sol !== '' && camera == ''){
+                filterParams = `sol=${sol}`
+            } else if(camera !== '' && sol == ''){    
+                filterParams = `camera=${camera}`
+            } else if(sol !== '' && camera !== '') {
+                filterParams = `sol=${sol}&camera=${camera}`
+            }
+
+            axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=${process.env.NASA_API_KEY}&${filterParams}`)
             .then((response) => {
                 const photos = response.data.photos                                
                 res.render('index', {

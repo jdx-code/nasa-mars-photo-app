@@ -9,14 +9,15 @@
 <body>
     <h1>MARS photo API</h1>
     <h2>Curiosity</h2>
-    <% let cams = ['fhaz', 'rhaz', 'mast', 'chemcam', 'mahli', 'mardi', 'navcam', 'pancam', 'minites'] %>
+    <% let cameras = ['FHAZ', 'RHAZ', 'MAST', 'CHEMCAM', 'MAHLI', 'MARDI', 'NAVCAM', 'PANCAM', 'MINITES'] %>
     <form action="/getMarsPhoto" method="GET">
         <label>Sol(Mars Solar Day)</label>
         <input type="number" name="sol" value="">
         <label>Camera</label>
-        <select name="cam">
-            <% cams.forEach(cam => { %>
-            <option value="<%= cam %>"><%= cam %></option>
+        <select name="camera">
+            <option value="">Any</option>
+            <% cameras.forEach(camera => { %>
+            <option value="<%= camera %>"><%= camera %></option>
             <% }) %>
         </select>
         <button type="submit">Find Photos</button>
@@ -26,6 +27,8 @@
         <% photos.forEach(photo => { %>
             <img src="<%= photo.img_src %>" alt="Mars photo" style="width:300px; height: 250px;">
         <% }) %>
+    <% } else if(typeof photos !== 'undefined' && photos.length == 0){ %>
+        <p>No results</p>
     <% } %>
 
     <script type="text/javascript" src="js/main.js"></script>

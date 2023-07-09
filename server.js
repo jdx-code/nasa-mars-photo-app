@@ -8,6 +8,10 @@ require('dotenv').config({ path: './config/.env' })
 
 app.set('view engine', 'ejs')
 
+// Body parser
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+
 app.use(express.static('public'));
 
 app.use('/', homeRoute)
