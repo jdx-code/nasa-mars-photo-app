@@ -18,12 +18,12 @@ module.exports = {
             }
 
             axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=${process.env.NASA_API_KEY}&${filterParams}`)
-            .then((response) => {
+            .then((response) => {                
                 const photos = response.data.photos                                
                 res.render('index', {
                     photos
                 })
-            })            
+            })          
         } catch(err) {
             console.error(err)
         }

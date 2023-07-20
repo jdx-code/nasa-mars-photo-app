@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../dist/output.css"> 
     <title>Document</title>
 </head>
 <body>
-    <h1>MARS photo API</h1>
+    <h1 class="bg-yellow-600">MARS photo API</h1>
     <h2>Curiosity</h2>
     <% let cameras = ['FHAZ', 'RHAZ', 'MAST', 'CHEMCAM', 'MAHLI', 'MARDI', 'NAVCAM', 'PANCAM', 'MINITES'] %>
     <form action="/getMarsPhoto" method="GET">
-        <label>Sol(Mars Solar Day)</label>
+        <!-- <label>Sol(Mars Solar Day)</label>
         <input type="number" name="sol" value="">
         <label>Camera</label>
         <select name="camera">
@@ -19,7 +20,18 @@
             <% cameras.forEach(camera => { %>
             <option value="<%= camera %>"><%= camera %></option>
             <% }) %>
-        </select>
+        </select> -->
+        
+            
+        <input type="number" name="sol" placeholder="Sol(Mars Solar Day)" value=""/>            
+    
+        <select name="camera">
+            <option value="">Any</option>
+            <% cameras.forEach(camera => { %>
+                <option value="<%= camera %>"><%= camera %></option>
+            <% }) %>
+        </select>        
+        
         <button type="submit">Find Photos</button>
     </form>
     
