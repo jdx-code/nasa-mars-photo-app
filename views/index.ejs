@@ -11,12 +11,12 @@
     <title>Document</title>
 </head>
 <body>    
-    <h1 class="bg-blue-600">MARS photo API</h1>
+    <!-- <h1 class="bg-blue-600">MARS photo API</h1> -->
     <h2>Curiosity</h2>
     <% let cameras = ['FHAZ', 'RHAZ', 'MAST', 'CHEMCAM', 'MAHLI', 'MARDI', 'NAVCAM', 'PANCAM', 'MINITES'] %>
     <div class="pb-12 mx-2">
-        <h2 class="text-base font-semibold leading-7 text-gray-100">EXPLORE MARS</h2>
-        <p class="mt-1 text-sm leading-6 text-gray-100">Get Mars Photos taken by NASA's Curiosity Rover.</p>
+        <!-- <h2 class="text-base font-semibold leading-7 text-gray-100">EXPLORE MARS</h2>
+        <p class="mt-1 text-sm leading-6 text-gray-100">Get Mars Photos taken by NASA's Curiosity Rover.</p> -->
   
         <form action="/getMarsPhoto" method="GET">  
             <!-- <div class="mt-4 grid grid-cols-3 gap-x-2 gap-y-8"> -->
@@ -59,9 +59,9 @@
     </div>
 
     <% if(typeof photos !== 'undefined') { %>
-        <div class="flex flex-wrap justify-center bg-white text-sm">
+        <div class="flex flex-wrap justify-center text-sm">
             <% photos.forEach(photo => { %>                
-                <div class="card group w-[70%] border-2 border-blue-200 sm:w-[40%] md:w-[35%] lg:w-[25%] h-auto rounded-lg shadow-2xl my-4 mx-2 sm:mx-4 transition delay-150 duration-300 ease-in-out hover:shadow-3xl hover:scale-105 group-hover:shadow-3xl group-hover:scale-105">
+                <div class="card group w-[70%] bg-white border-2 border-blue-200 sm:w-[40%] md:w-[35%] lg:w-[25%] h-auto rounded-lg shadow-2xl my-4 mx-2 sm:mx-4 transition delay-150 duration-300 ease-in-out hover:shadow-3xl hover:scale-105 group-hover:shadow-3xl group-hover:scale-105">
                     <figure><img class="rounded-t-lg" src="<%= photo.img_src %>" alt="Mars photo"></figure>
                     <div class="card-body p-4 hover:border-blue-300">
                         <h2 class="card-title flex justify-between">
