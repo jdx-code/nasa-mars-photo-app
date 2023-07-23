@@ -13,9 +13,22 @@
 <body>    
     <!-- <h1 class="bg-blue-600">MARS photo API</h1> -->
     <nav class="sticky top-0 z-10 w-full h-20 bg-black bg-opacity-75">
-        <p class="text-blue-100">NASA Curiosity Rover</p>
+        <p class="text-blue-100 font-extrabold text-xl p-4">
+            <a href="/">EXPLORE MARS</a> 
+            <small class="block font-light text-xs">Images by NASA Curiosity Rover</small>
+        </p>        
     </nav>
-    <% let cameras = ['FHAZ', 'RHAZ', 'MAST', 'CHEMCAM', 'MAHLI', 'MARDI', 'NAVCAM', 'PANCAM', 'MINITES'] %>
+    <% let cameras = [
+        'FHAZ',
+        'RHAZ',
+        'MAST',
+        'CHEMCAM',
+        'MAHLI',
+        'MARDI',
+        'NAVCAM',
+        'PANCAM',
+        'MINITES'
+        ] %>
     <div class="pb-12 mx-2">
         <!-- <h2 class="text-base font-semibold leading-7 text-gray-100">EXPLORE MARS</h2>
         <p class="mt-1 text-sm leading-6 text-gray-100">Get Mars Photos taken by NASA's Curiosity Rover.</p> -->
@@ -54,8 +67,7 @@
                             
                     </div>
 
-                </div>
-            
+                </div>           
             
         </form>
     </div>
@@ -67,7 +79,7 @@
         <div class="flex flex-wrap justify-center text-sm">           
             <% photos.forEach(photo => { %>                
                 <div class="card group w-[70%] bg-white border-2 border-blue-200 sm:w-[40%] md:w-[35%] lg:w-[25%] h-auto rounded-lg shadow-2xl my-4 mx-2 sm:mx-4 transition delay-150 duration-300 ease-in-out hover:shadow-3xl hover:scale-105 group-hover:shadow-3xl group-hover:scale-105">
-                    <figure><img class="rounded-t-lg" src="<%= photo.img_src %>" alt="Mars photo"></figure>
+                    <figure><img class="rounded-t-lg w-full h-auto" src="<%= photo.img_src %>" alt="Mars photo"></figure>
                     <div class="card-body p-4 hover:border-blue-300">
                         <h2 class="card-title flex justify-between">
                             <span class="font-bold"> Sol : <%= photo.sol %></span>
@@ -88,6 +100,11 @@
         <div class="flex justify-center">
             <p class="w-[50%] h-20 flex justify-center items-center bg-white">Sorry !! No results received. Try again with different values.</p>
         </div>        
+    <% } else { %>
+        <div class="text-blue-100 bg-black bg-opacity-25 p-12 flex flex-col items-center justify-center mx-auto">            
+                <p class="text-5xl">EXPLORE MARS</p>
+                <p>Search images captured by NASA's Curiosity Rover.</p>            
+        </div>            
     <% } %>
     
     <script type="text/javascript" src="js/main.js"></script>
