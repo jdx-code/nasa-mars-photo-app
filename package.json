@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "An application that provides users with the ability to search for photos taken by NASA's Curiosity Mars rover.",
   "main": "index.js",
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
     "start": "node server",
     "dev": "nodemon server",
+    "build": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
