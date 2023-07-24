@@ -1,4 +1,6 @@
-# EXPLORE-MARS [nasa-mars-photo-app]
+# EXPLORE-MARS 
+
+## [LIVE LINK](https://explore-mars.onrender.com/)
 
 # Overview
 - This app was created for the Chingu Voyage 45 pre-work. It pulls data from the [Mars Rover Photos API](https://api.nasa.gov/#MarsPhotos).
