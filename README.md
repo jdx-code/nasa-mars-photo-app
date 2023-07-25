@@ -33,7 +33,7 @@
 
 #### Background Image credit
 
-- Photo by Nathan Anderson on Unsplash [Link](https://unsplash.com/photos/KvgB81s4dF0)
+- [Photo](https://unsplash.com/photos/KvgB81s4dF0) by Nathan Anderson on Unsplash.
 
 #### Fonts from [Google Fonts](https://fonts.google.com/)
 
